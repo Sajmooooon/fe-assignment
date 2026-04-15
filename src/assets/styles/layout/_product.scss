@@ -22,14 +22,10 @@
         }
     }
 
-    &__image {
-        position: relative;
-    }
-
     &__badges {
         position: absolute;
-        top: 0;
-        left: 0;
+        top: 1rem;
+        left: 1rem;
         display: flex;
         gap: 0.4rem;
     }
@@ -56,8 +52,8 @@
 
     &__actions {
         position: absolute;
-        top: 0;
-        right: 0;
+        top: 1rem;
+        right: 1rem;
         display: flex;
         gap: 0.6rem;
         opacity: 0;
@@ -203,6 +199,7 @@
         font-weight: 600;
         font-size: 1.4rem;
         line-height: 1;
+        border: 1px solid #f1f0f6;
         color: #070216;
 
         &::-webkit-outer-spin-button,
