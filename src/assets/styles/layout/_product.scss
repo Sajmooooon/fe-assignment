@@ -4,6 +4,7 @@
     position: relative;
     min-width: 250px;
     border-radius: 0.4rem;
+    background-color: #ffffff;
     border: 1px solid #f1f0f6;
     padding: 2rem;
     gap: 1rem;
@@ -171,7 +172,8 @@
 
     &__cart {
         display: flex;
-
+        flex-wrap: wrap;
+        align-items: center;
         justify-content: space-between;
         gap: 16px;
     }

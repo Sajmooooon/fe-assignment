@@ -8,8 +8,20 @@
     align-items: stretch;
     gap: 2.4rem;
 
+    @include tablet {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mobile {
+        grid-template-columns: 1fr;
+    }
+
     &__cta {
         grid-column: span 2;
+
+        @include mobile {
+            grid-column: span 1;
+        }
     }
 
     &__products {
