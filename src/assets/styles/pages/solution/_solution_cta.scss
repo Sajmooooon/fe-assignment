@@ -53,40 +53,5 @@
                 font-weight: 800;
             }
         }
-
-        &__button {
-            display: flex;
-            gap: 0.8rem;
-            align-items: center;
-            justify-content: space-between;
-            padding: 1.6rem 2rem;
-            color: #fff;
-            cursor: pointer;
-            background: #dd1969;
-            border: none;
-            border-radius: 0.4rem;
-            transition: background 0.2s ease;
-
-            &:hover {
-                background: #c01559;
-            }
-
-            &:active {
-                background: #a01249;
-            }
-
-            .sc-text {
-                font-family: "Wix Madefor Display", sans-serif;
-                font-size: 1.6rem;
-                font-weight: 700;
-                white-space: nowrap;
-            }
-
-            .sc-icon {
-                flex-shrink: 0;
-                width: 2rem;
-                height: 2rem;
-            }
-        }
     }
 }
