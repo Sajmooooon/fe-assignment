@@ -1,0 +1,214 @@
+@use "./../init" as *;
+
+.c-product {
+    position: relative;
+    min-width: 250px;
+    border-radius: 0.4rem;
+    border: 1px solid #f1f0f6;
+    padding: 2rem;
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 0.4rem 0.8rem rgba($color: #0000001f, $alpha: 0.12);
+
+    &:hover {
+        cursor: pointer;
+
+        .c-product__actions {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    }
+
+    &__image {
+        position: relative;
+    }
+
+    &__badges {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        gap: 0.4rem;
+    }
+
+    &__badge {
+        padding: 0.4rem 0.6rem;
+        border-radius: 0.4rem;
+        font-family: "DM Sans", sans-serif;
+        font-weight: 600;
+        font-size: 1.3rem;
+        line-height: 1;
+        text-align: center;
+        vertical-align: middle;
+
+        &--discount {
+            background-color: #7d2f78;
+            color: #fff;
+        }
+        &--new {
+            background-color: #149721;
+            color: #fff;
+        }
+    }
+
+    &__actions {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: flex;
+        gap: 0.6rem;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    &__action {
+        width: 3.2rem;
+        height: 3.2rem;
+        border: 0;
+        border-radius: 0.4rem;
+        padding: 0.9rem;
+        background-color: #f1f0f6;
+        color: #070216;
+        cursor: pointer;
+    }
+
+    &__img {
+        width: 100%;
+        object-fit: contain;
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    &__top {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    &__main {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    &__rating {
+        display: flex;
+        align-items: center;
+        gap: 0.2rem;
+    }
+
+    &__review-count {
+        font-family: "DM Sans", sans-serif;
+        font-size: 1.2rem;
+        font-weight: 400;
+        color: #070216;
+    }
+
+    &__name {
+        font-family: "Wix Madefor Display", sans-serif;
+        font-size: 1.6rem;
+        font-weight: 800;
+        margin: 0;
+    }
+
+    &__sku {
+        font-family: "DM Sans", sans-serif;
+        font-size: 1.3rem;
+        color: #555555;
+        margin: 0;
+    }
+
+    &__pricing {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    &__middle {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    &__price-original {
+        font-family: "DM Sans", sans-serif;
+        font-weight: 400;
+        font-size: 1.3rem;
+        text-decoration: line-through;
+        color: #070216;
+    }
+
+    &__price-sale {
+        font-family: "Wix Madefor Display", sans-serif;
+        font-size: 2rem;
+        font-weight: 800;
+        color: #dd1969;
+    }
+
+    &__price-vat {
+        font-family: "DM Sans", sans-serif;
+        font-weight: 400;
+        font-size: 1.1rem;
+        line-height: 1;
+        color: #555555;
+    }
+
+    &__stock {
+        font-family: "DM Sans", sans-serif;
+        font-weight: 600;
+        font-size: 1.4rem;
+        line-height: 1;
+        text-decoration: underline;
+        color: #149721;
+    }
+
+    &__cart {
+        display: flex;
+
+        justify-content: space-between;
+        gap: 16px;
+    }
+
+    &__quantity {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    &__qty-btn {
+        border: none;
+        background: none;
+        cursor: pointer;
+        font-size: 1.8rem;
+        border-radius: 0.4rem;
+    }
+
+    &__qty-input {
+        width: 4.6rem;
+        height: 4.4rem;
+        text-align: center;
+        border-radius: 0.4rem;
+        padding: 0 0.6rem;
+        border: 1px solid;
+        font-family: "DM Sans", sans-serif;
+        font-weight: 600;
+        font-size: 1.4rem;
+        line-height: 1;
+        color: #070216;
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        -moz-appearance: textfield;
+    }
+}

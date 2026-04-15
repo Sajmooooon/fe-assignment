@@ -1,0 +1,7 @@
+@use "./../../init" as *;
+
+.c-solution-products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
