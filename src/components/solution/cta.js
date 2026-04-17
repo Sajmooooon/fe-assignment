@@ -1,5 +1,5 @@
 import { html } from "lit-html";
-import { button } from "../button";
+import { button } from "../ui/button";
 import ctaImage from "../../assets/images/tanjna-ponuka.png";
 // CTA button click handler
 const handleCtaClick = () => {

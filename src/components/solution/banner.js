@@ -1,5 +1,5 @@
 import { html } from "lit-html";
-import { button } from "../button";
+import { button } from "../ui/button";
 import bannerImage from "../../assets/images/main-banner.png";
 import bannerImageMob from "../../assets/images/main-banner-mobile.png";
 

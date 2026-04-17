@@ -1,5 +1,5 @@
 import { html } from "lit-html";
-import { button } from "./button";
+import { button } from "../ui/button";
 
 const handleProductClick = (link, linkTarget = "_self") => {
     if (!link) return;
