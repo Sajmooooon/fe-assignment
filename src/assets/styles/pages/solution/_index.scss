@@ -3,9 +3,18 @@
 @use "./solution_banner";
 @use "./solution_content";
 @use "./solution_products";
+@use "./solution_categories";
 
 .l-solution {
     &__banner {
+        margin-bottom: 10rem;
+    }
+
+    &__content {
+        margin-bottom: 10rem;
+    }
+
+    &__categories {
         margin-bottom: 10rem;
     }
 }
