@@ -1,0 +1,116 @@
+@use "./../init" as *;
+
+.c-category-card {
+    position: relative;
+    border-radius: 0.8rem;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+
+    &__overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(182.11deg, rgba(0, 0, 0, 0) 1.78%, rgba(0, 0, 0, 0.8) 90.09%);
+    }
+
+    &__content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+        padding: 2rem;
+        height: 100%;
+        color: #ffffff;
+        justify-content: flex-end;
+    }
+
+    &__main {
+        min-height: 50%;
+        display: flex;
+        flex-direction: column;
+        gap: 1.6rem;
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+    }
+
+    &__name {
+        font-family: "Wix Madefor Display", sans-serif;
+        font-weight: 800;
+        font-size: 2.4rem;
+        line-height: 1.2;
+    }
+
+    &__count {
+        min-width: 1.9rem;
+        height: 1.8rem;
+        border-radius: 2rem;
+        padding: 0.2rem 0.4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #dd1969;
+        color: #ffffff;
+        font-family: "DM Sans", sans-serif;
+        font-weight: 700;
+        font-size: 1.1rem;
+        line-height: 1;
+        text-align: center;
+    }
+
+    &__subcategories {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+        gap: 0 4rem;
+    }
+
+    &__subcategory {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+
+        &::before {
+            width: 1.2rem;
+            flex-shrink: 0;
+            flex-grow: 0;
+            content: "";
+            height: 0.2rem;
+            background-color: #dd1969;
+        }
+    }
+
+    &__subcategory-link {
+        font-family: "DM Sans", sans-serif;
+        color: #ffffff;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-weight: 500;
+        font-size: 1.6rem;
+        line-height: 1.8;
+        transition: 0.3s ease-in-out;
+
+        &:hover {
+            color: #dd1969;
+        }
+    }
+
+    &__cta {
+        font-family: "DM Sans", sans-serif;
+        color: #ffffff;
+        text-decoration: underline;
+        font-weight: 700;
+        font-size: 1.5rem;
+        line-height: 1.2;
+        text-decoration-style: solid;
+        text-decoration-skip-ink: auto;
+    }
+}

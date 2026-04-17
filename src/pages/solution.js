@@ -3,6 +3,7 @@ import { loadData } from "../dataLoader.js";
 import { solutionBanner } from "../components/solution/banner.js";
 import { solutionCta } from "../components/solution/cta.js";
 import { products } from "../components/solution/products.js";
+import { solutionCategories } from "../components/solution/categories.js";
 
 // Main page template
 export const renderSolutionPage = (data) => {
@@ -17,11 +18,11 @@ export const renderSolutionPage = (data) => {
 
     return html`
         <div class="l-solution">
-            <div class="l-solution__banner">
+            <section class="l-solution__banner">
                 <div class="l-container">${data.banner ? solutionBanner(data.banner) : html``}</div>
-            </div>
+            </section>
 
-            <div class="l-solution__content">
+            <section class="l-solution__content">
                 <div class="l-container is-shorter">
                     <div class="c-solution-content">
                         <div class="c-solution-content__cta">
@@ -31,13 +32,13 @@ export const renderSolutionPage = (data) => {
                         ${data.products ? products(data.products) : html``}
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <div class="l-solution__categories">
-                <div class="l-container">
-                    <div class="c-solution-categories"></div>
+            <section class="l-solution__categories">
+                <div class="l-container is-shorter">
+                    ${data.categories ? solutionCategories(data.categories) : html``}
                 </div>
-            </div>
+            </section>
         </div>
     `;
 };
