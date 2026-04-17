@@ -16,7 +16,21 @@
 
 @font-face {
     font-family: "DM Sans";
+    src: url("/fonts/DMSans-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "DM Sans";
     src: url("/fonts/DMSans-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "DM Sans";
+    src: url("/fonts/DMSans-ExtraBold.ttf") format("truetype");
     font-weight: 800;
     font-style: normal;
 }
@@ -37,7 +51,21 @@
 
 @font-face {
     font-family: "Wix Madefor Display";
+    src: url("/fonts/WixMadeforDisplay-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Wix Madefor Display";
     src: url("/fonts/WixMadeforDisplay-Bold.ttf") format("truetype");
     font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Wix Madefor Display";
+    src: url("/fonts/WixMadeforDisplay-ExtraBold.ttf") format("truetype");
+    font-weight: 800;
     font-style: normal;
 }
