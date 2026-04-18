@@ -1,0 +1,60 @@
+@use "./../init" as *;
+
+.c-notification-container {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    z-index: 1000;
+
+    @include small-mobile {
+        right: 0;
+    }
+}
+
+.c-notification {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem 1.5rem;
+    border-radius: 0.8rem;
+    font-weight: 700;
+    font-family: "DM Sans", sans-serif;
+    font-size: 1.4rem;
+    box-shadow: 0 0.4rem 1.6rem rgba(0, 0, 0, 0.15);
+    max-width: 36rem;
+    transform: translateY(2rem);
+    background-color: var(--c-white);
+    color: var(--c-black);
+    border: 1px solid var(--c-border);
+    opacity: 0;
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+
+    &--success {
+        background-color: var(--s-success);
+        border: 1px solid transparent;
+        color: var(--s-on-success);
+    }
+
+    &--error {
+        background-color: var(--s-error);
+        border: 1px solid transparent;
+        color: var(--s-on-error);
+    }
+
+    &--visible {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    svg {
+        width: 2rem;
+        height: 2rem;
+        flex-shrink: 0;
+    }
+}
