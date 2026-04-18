@@ -21,7 +21,7 @@
         gap: 1.2rem;
         padding: 3rem;
         height: 100%;
-        color: #ffffff;
+        color: var(--c-white);
         justify-content: flex-end;
     }
 
@@ -44,6 +44,10 @@
         font-weight: 800;
         font-size: 2.4rem;
         line-height: 1.2;
+
+        @include mobile {
+            font-size: 2rem;
+        }
     }
 
     &__count {
@@ -54,8 +58,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #dd1969;
-        color: #ffffff;
+        background-color: var(--r-maincta-pink);
+        color: var(--c-white);
         font-family: "DM Sans", sans-serif;
         font-weight: 700;
         font-size: 1.1rem;
@@ -70,6 +74,11 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
         gap: 0 4rem;
+
+        @include tablet {
+            gap: 0 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+        }
     }
 
     &__subcategory {
@@ -83,13 +92,13 @@
             flex-grow: 0;
             content: "";
             height: 0.2rem;
-            background-color: #dd1969;
+            background-color: var(--r-maincta-pink);
         }
     }
 
     &__subcategory-link {
         font-family: "DM Sans", sans-serif;
-        color: #ffffff;
+        color: var(--c-white);
         text-decoration: none;
         display: flex;
         align-items: center;
@@ -100,13 +109,17 @@
         transition: 0.3s ease-in-out;
 
         &:hover {
-            color: #dd1969;
+            color: var(--r-maincta-pink);
+        }
+
+        @include tablet {
+            font-size: 1.4rem;
         }
     }
 
     &__cta {
         font-family: "DM Sans", sans-serif;
-        color: #ffffff;
+        color: var(--c-white);
         text-decoration: underline;
         font-weight: 700;
         font-size: 1.5rem;

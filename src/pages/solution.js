@@ -18,8 +18,10 @@ export const renderSolutionPage = (data) => {
 
     return html`
         <div class="l-solution">
-            <section class="l-solution__banner">
-                <div class="l-container">${data.banner ? solutionBanner(data.banner) : html``}</div>
+            <section class="l-solution__banner ">
+                <div class="l-container l-container--no-pading">
+                    ${data.banner ? solutionBanner(data.banner) : html``}
+                </div>
             </section>
 
             <section class="l-solution__content">
@@ -35,7 +37,7 @@ export const renderSolutionPage = (data) => {
             </section>
 
             <section class="l-solution__categories">
-                <div class="l-container is-shorter">
+                <div class="l-container l-container--is-shorter">
                     ${data.categories ? solutionCategories(data.categories) : html``}
                 </div>
             </section>

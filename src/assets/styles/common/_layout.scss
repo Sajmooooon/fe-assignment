@@ -9,12 +9,19 @@
     // project colors
     --c-font: var(--c-black);
     --c-bg: #f5f5f5;
+    --r-maincta-pink: #dd1969;
 
     // sizes
     --s-container-padding: 2rem;
 
     // fonts
     --f-primary: system-ui, avenir, helvetica, arial, sans-serif;
+}
+
+@include mobile {
+    :root {
+        --s-container-padding: 1rem;
+    }
 }
 
 body {
@@ -38,7 +45,13 @@ body {
     padding: 0 var(--s-container-padding);
     margin: 0 auto;
 
-    &.is-shorter {
+    &--is-shorter {
         max-width: 132rem;
+    }
+
+    &--no-pading {
+        @include mobile {
+            padding: 0;
+        }
     }
 }

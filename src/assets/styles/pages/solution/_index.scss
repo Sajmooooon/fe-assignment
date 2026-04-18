@@ -8,13 +8,25 @@
 .l-solution {
     &__banner {
         margin-bottom: 10rem;
+
+        @include tablet {
+            margin-bottom: 8rem;
+        }
+
+        @include mobile {
+            margin-bottom: 5rem;
+        }
     }
 
     &__content {
-        margin-bottom: 10rem;
-    }
+        margin-bottom: 7rem;
 
-    &__categories {
-        margin-bottom: 10rem;
+        @include tablet {
+            margin-bottom: 5rem;
+        }
+
+        @include mobile {
+            margin-bottom: 4rem;
+        }
     }
 }

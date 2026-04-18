@@ -17,6 +17,10 @@
     &__main {
         flex: 1;
         padding: 3.2rem 0;
+
+        @include mobile {
+            padding: 0;
+        }
     }
 
     &__footer {

@@ -5,6 +5,14 @@
     flex-direction: column;
     gap: 4rem;
 
+    @include tablet {
+        gap: 3rem;
+    }
+
+    @include mobile {
+        gap: 2rem;
+    }
+
     &__title {
         font-family: "Wix Madefor Display", sans-serif;
         font-weight: 800;

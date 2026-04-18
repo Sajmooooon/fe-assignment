@@ -68,7 +68,7 @@
     }
 
     a {
-        color: #dd1969;
+        color: var(--r-maincta-pink);
         text-decoration: none;
         word-break: break-all;
         transition: color 0.2s ease;
@@ -98,10 +98,10 @@
         padding: 1.2rem 3rem;
         font-size: 1.6rem;
         font-weight: 600;
-        color: #fff;
+        color: var(--c-white);
         text-decoration: none;
         cursor: pointer;
-        background: #dd1969;
+        background: var(--r-maincta-pink);
         border-radius: 0.4rem;
         transition: background 0.2s ease;
 
