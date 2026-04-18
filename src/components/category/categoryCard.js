@@ -6,7 +6,7 @@ const handleCategoryClick = (link, linkTarget = "_self") => {
 };
 
 export const categoryCard = (category, size = "small") => html`
-    <div
+    <article
         class="c-category-card c-category-card--${size}"
         style="background-image: url('${category.imageUrl}')"
         @click=${() => handleCategoryClick(category.link)}
@@ -45,5 +45,5 @@ export const categoryCard = (category, size = "small") => html`
                 </a>
             </div>
         </div>
-    </div>
+    </article>
 `;

@@ -5,7 +5,7 @@
     min-width: 250px;
     border-radius: 0.4rem;
     background-color: var(--c-white);
-    border: 1px solid #f1f0f6;
+    border: 1px solid var(--r-background);
     padding: 2rem;
     gap: 1rem;
     display: flex;
@@ -59,6 +59,14 @@
         opacity: 0;
         pointer-events: none;
         transition: opacity 0.3s ease-in-out;
+
+        @include tablet {
+            opacity: 1;
+        }
+
+        @include mobile {
+            opacity: 1;
+        }
     }
 
     &__action {
@@ -67,9 +75,18 @@
         border: 0;
         border-radius: 0.4rem;
         padding: 0.9rem;
-        background-color: #f1f0f6;
-        color: #070216;
+        background-color: var(--r-background);
+        color: var(--r-black);
         cursor: pointer;
+        transition: 0.3s ease-in-out;
+
+        &:hover {
+            filter: drop-shadow(0 0.2rem 0.4rem rgba(0, 0, 0, 0.2));
+        }
+
+        &:active {
+            background-color: var(--c-white);
+        }
     }
 
     &__img {
@@ -80,19 +97,19 @@
     &__body {
         display: flex;
         flex-direction: column;
-        gap: 32px;
+        gap: 3.2rem;
     }
 
     &__top {
         display: flex;
         flex-direction: column;
-        gap: 16px;
+        gap: 1.6rem;
     }
 
     &__main {
         display: flex;
         flex-direction: column;
-        gap: 8px;
+        gap: 0.8rem;
     }
 
     &__rating {
@@ -105,7 +122,7 @@
         font-family: "DM Sans", sans-serif;
         font-size: 1.2rem;
         font-weight: 400;
-        color: #070216;
+        color: var(--r-black);
     }
 
     &__name {
@@ -139,7 +156,7 @@
         font-weight: 400;
         font-size: 1.3rem;
         text-decoration: line-through;
-        color: #070216;
+        color: var(--r-black);
     }
 
     &__price-sale {
@@ -171,21 +188,30 @@
         flex-wrap: wrap;
         align-items: center;
         justify-content: space-between;
-        gap: 16px;
+        gap: 1.6rem;
     }
 
     &__quantity {
         display: flex;
         align-items: center;
-        gap: 8px;
+        gap: 0.2rem;
     }
 
     &__qty-btn {
+        padding: 0 0.4rem;
         border: none;
         background: none;
         cursor: pointer;
         font-size: 1.8rem;
         border-radius: 0.4rem;
+
+        &:hover {
+            background: rgba(0, 0, 0, 0.05);
+        }
+
+        &:active {
+            background: rgba(0, 0, 0, 0.1);
+        }
     }
 
     &__qty-input {
@@ -199,8 +225,8 @@
         font-weight: 600;
         font-size: 1.4rem;
         line-height: 1;
-        border: 1px solid #f1f0f6;
-        color: #070216;
+        border: 1px solid var(--r-background);
+        color: var(--r-black);
 
         &::-webkit-outer-spin-button,
         &::-webkit-inner-spin-button {
