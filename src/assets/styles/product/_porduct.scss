@@ -13,6 +13,10 @@
     justify-content: space-between;
     box-shadow: 0 0.4rem 0.8rem rgba($color: #0000001f, $alpha: 0.12);
 
+    @include small-mobile {
+        min-width: 0;
+    }
+
     &:hover {
         cursor: pointer;
 

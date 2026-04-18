@@ -38,9 +38,7 @@
 }
 
 body {
-    min-width: 36rem;
     min-height: 100dvh;
-    overflow-x: hidden;
     font-family: var(--f-primary);
     font-size: 1.4rem;
     font-weight: 400;
@@ -54,6 +52,7 @@ body {
 
 .l-container {
     width: 100%;
+    min-width: 0;
     max-width: 160rem;
     padding: 0 var(--s-container-padding);
     margin: 0 auto;
