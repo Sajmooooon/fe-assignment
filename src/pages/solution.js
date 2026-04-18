@@ -25,7 +25,7 @@ export const renderSolutionPage = (data) => {
             </section>
 
             <section class="l-solution__content">
-                <div class="l-container is-shorter">
+                <div class="l-container l-container--is-shorter"">
                     <div class="c-solution-content">
                         <div class="c-solution-content__cta">
                             ${data.ctaBanner ? solutionCta(data.ctaBanner) : html``}
