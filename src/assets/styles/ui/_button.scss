@@ -13,6 +13,7 @@
     border: none;
     border-radius: 0.4rem;
     transition: background 0.2s ease;
+    user-select: none;
 
     @include mobile {
         padding: 1.2rem 1.6rem;
