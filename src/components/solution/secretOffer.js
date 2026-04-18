@@ -1,5 +1,8 @@
-import { html } from "lit-html";
+import { html, render } from "lit-html";
 import { button } from "../ui/button";
+import { debounce } from "../../utils/debounce";
+import { validateEmail } from "../../api/emailApi";
+import { showNotification } from "../ui/notification";
 
 const sourceOptions = [
     "Priamo z vášho webu",
@@ -9,11 +12,80 @@ const sourceOptions = [
     "Iné",
 ];
 
+let lastEmail = "";
+
+const setFieldError = (field, message = "") => {
+    const fieldEl = field.closest(".c-secret-offer__field");
+    if (!fieldEl) return;
+
+    const errorEl = fieldEl.querySelector(".c-secret-offer__error");
+    field.classList.toggle("is-error", !!message);
+
+    if (errorEl) errorEl.textContent = message;
+};
+
+const validateEmailDebounced = debounce(async (field) => {
+    const isLocalValid = validateField(field);
+    if (!isLocalValid) return;
+
+    const email = field.value;
+    lastEmail = email;
+
+    const res = await validateEmail(email);
+
+    if (email !== lastEmail) return;
+
+    setFieldError(field, res.success ? "" : res.message);
+}, 600);
+
+const validateNameDebounced = debounce((field) => validateField(field), 300);
+const validatePhoneDebounced = debounce((field) => validateField(field), 300);
+const validateSourceDebounced = debounce((field) => validateField(field), 300);
+
+const validateField = (field) => {
+    if (field.required && !field.value.trim()) {
+        setFieldError(field, "Toto pole je povinné");
+        return false;
+    }
+
+    if (field.type === "email" && field.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value)) {
+        setFieldError(field, "Zadajte platný e-mail");
+        return false;
+    }
+
+    if (field.type === "tel" && field.value && !/^\+?[\d\s]{9,15}$/.test(field.value)) {
+        setFieldError(field, "Zadajte platné telefónne číslo");
+        return false;
+    }
+
+    if (field.type !== "email") setFieldError(field, "");
+
+    return true;
+};
+
+const onEmailInput = (e) => validateEmailDebounced(e.target);
+
+const onNameInput = (e) => validateNameDebounced(e.target);
+const onPhoneInput = (e) => validatePhoneDebounced(e.target);
+const onSourceChange = (e) => validateSourceDebounced(e.target);
+
+const onBlur = (e) => validateField(e.target);
+
 const onSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
-    const data = new FormData(form);
-    console.log(Object.fromEntries(data));
+    const fields = [...form.querySelectorAll("input, select")];
+    const isValid = fields.map(validateField).every(Boolean);
+
+    if (!isValid) return;
+
+    const dialog = form.closest("dialog");
+    dialog.close();
+
+    showNotification({
+        text: "Formulár bol úspešne odoslaný. Čoskoro vás kontaktujeme.",
+        status: "success",
+    });
 };
 
 export const secretOffer = () => html`
@@ -29,6 +101,8 @@ export const secretOffer = () => html`
                     E-mail <span class="c-secret-offer__label--required" aria-hidden="true">*</span>
                 </label>
                 <input
+                    @input=${onEmailInput}
+                    @blur=${onBlur}
                     class="c-secret-offer__input"
                     type="email"
                     id="email"
@@ -36,6 +110,7 @@ export const secretOffer = () => html`
                     required
                     aria-required="true"
                 />
+                <span class="c-secret-offer__error" aria-live="polite"></span>
             </div>
 
             <div class="c-secret-offer__row">
@@ -45,6 +120,8 @@ export const secretOffer = () => html`
                         <span class="c-secret-offer__label--required" aria-hidden="true">*</span>
                     </label>
                     <input
+                        @input=${onNameInput}
+                        @blur=${onBlur}
                         class="c-secret-offer__input"
                         type="text"
                         id="name"
@@ -52,6 +129,7 @@ export const secretOffer = () => html`
                         required
                         aria-required="true"
                     />
+                    <span class="c-secret-offer__error" aria-live="polite"></span>
                 </div>
 
                 <div class="c-secret-offer__field">
@@ -60,6 +138,8 @@ export const secretOffer = () => html`
                         <span class="c-secret-offer__label--required" aria-hidden="true">*</span>
                     </label>
                     <input
+                        @input=${onPhoneInput}
+                        @blur=${onBlur}
                         class="c-secret-offer__input c-secret-offer__input--phone"
                         type="tel"
                         id="phone"
@@ -68,6 +148,7 @@ export const secretOffer = () => html`
                         required
                         aria-required="true"
                     />
+                    <span class="c-secret-offer__error" aria-live="polite"></span>
                 </div>
             </div>
 
@@ -83,6 +164,8 @@ export const secretOffer = () => html`
                         name="source"
                         required
                         aria-required="true"
+                        @change=${onSourceChange}
+                        @blur=${onBlur}
                     >
                         ${sourceOptions.map((opt) => html`<option value="${opt}">${opt}</option>`)}
                     </select>
@@ -103,6 +186,7 @@ export const secretOffer = () => html`
                         />
                     </svg>
                 </div>
+                <span class="c-secret-offer__error" aria-live="polite"></span>
             </div>
 
             <div class="c-secret-offer__footer">
@@ -110,6 +194,7 @@ export const secretOffer = () => html`
                     text: "Získať tajnú ponuku",
                     icon: "arrow",
                     iconPosition: "end",
+                    type: "submit",
                 })}
                 <p class="c-secret-offer__consent">
                     Odoslaním formuláru súhlasíte so
