@@ -25,7 +25,7 @@ export const categoryCard = (category, index) => {
             <div class="c-category-card__content">
                 <div class="c-category-card__main">
                     <div class="c-category-card__header">
-                        <h3 class="c-category-card__name">${category.name}</h3>
+                        <h3 class="c-category-card__name l-text-wrap ">${category.name}</h3>
                         <span class="c-category-card__count">${category.productCount}</span>
                     </div>
 
@@ -34,7 +34,7 @@ export const categoryCard = (category, index) => {
                             (sub) => html`
                                 <li class="c-category-card__subcategory">
                                     <a
-                                        class="c-category-card__subcategory-link"
+                                        class="c-category-card__subcategory-link l-text-wrap "
                                         href="${sub.link}"
                                         @click=${(e) => e.stopPropagation()}
                                     >
@@ -46,7 +46,7 @@ export const categoryCard = (category, index) => {
                     </ul>
 
                     <a
-                        class="c-category-card__cta"
+                        class="c-category-card__cta l-text-wrap "
                         href="${category.link}"
                         @click=${(e) => e.stopPropagation()}
                     >

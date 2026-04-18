@@ -29,16 +29,22 @@
 }
 
 /* Quick fix na wrapovanie textu na mobiloch */
-@include mobile {
+/* @include mobile {
     * {
         word-break: break-word;
         overflow-wrap: break-word;
     }
-}
+} */
 
 :focus-visible {
     outline: 3px solid var(--r-maincta-pink);
     outline-offset: 2px;
+}
+
+.l-text-wrap {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 
 @include mobile {

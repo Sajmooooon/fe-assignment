@@ -97,7 +97,7 @@ export const secretOffer = () => html`
 
         <form class="c-secret-offer__form" @submit=${onSubmit} novalidate>
             <div class="c-secret-offer__field">
-                <label class="c-secret-offer__label" for="email">
+                <label class="c-secret-offer__label l-text-wrap" for="email">
                     E-mail <span class="c-secret-offer__label--required" aria-hidden="true">*</span>
                 </label>
                 <input
@@ -115,7 +115,7 @@ export const secretOffer = () => html`
 
             <div class="c-secret-offer__row">
                 <div class="c-secret-offer__field">
-                    <label class="c-secret-offer__label" for="name">
+                    <label class="c-secret-offer__label l-text-wrap" for="name">
                         Meno a priezvisko
                         <span class="c-secret-offer__label--required" aria-hidden="true">*</span>
                     </label>
@@ -133,7 +133,7 @@ export const secretOffer = () => html`
                 </div>
 
                 <div class="c-secret-offer__field">
-                    <label class="c-secret-offer__label" for="phone">
+                    <label class="c-secret-offer__label l-text-wrap" for="phone">
                         Telefónne číslo (mobil)
                         <span class="c-secret-offer__label--required" aria-hidden="true">*</span>
                     </label>
@@ -153,7 +153,7 @@ export const secretOffer = () => html`
             </div>
 
             <div class="c-secret-offer__field">
-                <label class="c-secret-offer__label" for="source">
+                <label class="c-secret-offer__label l-text-wrap" for="source">
                     Odkiaľ ste sa o tejto ponuke dozvedeli?
                     <span class="c-secret-offer__label--required" aria-hidden="true">*</span>
                 </label>
@@ -196,9 +196,12 @@ export const secretOffer = () => html`
                     iconPosition: "end",
                     type: "submit",
                 })}
-                <p class="c-secret-offer__consent">
+                <p class="c-secret-offer__consent l-text-wrap">
                     Odoslaním formuláru súhlasíte so
-                    <a class="c-secret-offer__consent-link" href="/spracovanie-osobnych-udajov">
+                    <a
+                        class="c-secret-offer__consent-link l-text-wrap"
+                        href="/spracovanie-osobnych-udajov"
+                    >
                         spracovaním osobných údajov
                     </a>
                 </p>

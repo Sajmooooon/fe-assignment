@@ -22,9 +22,11 @@ export const solutionBanner = (banner) => html`
 
         <div class="c-solution-banner__wrapper">
             <div class="c-solution-banner__content">
-                <h1 class="c-solution-banner__content__title">${banner.title}</h1>
+                <h1 class="c-solution-banner__content__title l-text-wrap ">${banner.title}</h1>
 
-                <div class="c-solution-banner__content__description">${banner.description}</div>
+                <div class="c-solution-banner__content__description l-text-wrap ">
+                    ${banner.description}
+                </div>
 
                 ${button({
                     text: banner.ctaText,

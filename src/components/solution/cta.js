@@ -35,9 +35,11 @@ export const solutionCta = (ctaBanner) => html`
 
         <div class="c-solution-cta__wrapper">
             <div class="c-solution-cta__content">
-                <h2 class="c-solution-cta__content__title">${ctaBanner.title}</h2>
+                <h2 class="c-solution-cta__content__title l-text-wrap">${ctaBanner.title}</h2>
 
-                <div class="c-solution-cta__content__description">${ctaBanner.description}</div>
+                <div class="c-solution-cta__content__description l-text-wrap">
+                    ${ctaBanner.description}
+                </div>
 
                 ${button({
                     text: ctaBanner.ctaText,

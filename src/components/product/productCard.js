@@ -124,8 +124,8 @@ export const productCard = (product, index) => {
                             )}
                             <span class="c-product__review-count">(${product.reviewCount})</span>
                         </div>
-                        <h3 class="c-product__name">${product.name}</h3>
-                        <p class="c-product__sku">${product.sku}</p>
+                        <h3 class="c-product__name l-text-wrap ">${product.name}</h3>
+                        <p class="c-product__sku l-text-wrap ">${product.sku}</p>
                     </div>
 
                     <div class="c-product__middle">

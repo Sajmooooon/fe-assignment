@@ -9,7 +9,7 @@ const getCategorySize = (productCount) => {
 
 export const solutionCategories = (categories) => html`
     <div class="c-solution-categories">
-        <h2 class="c-solution-categories__title">Top kategórie produktov</h2>
+        <h2 class="c-solution-categories__title l-text-wrap">Top kategórie produktov</h2>
         <div class="c-solution-categories__grid">
             ${categories.map((category, index) => categoryCard(category, index))}
         </div>
