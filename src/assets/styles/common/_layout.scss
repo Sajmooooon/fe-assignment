@@ -28,6 +28,14 @@
     --f-primary: system-ui, avenir, helvetica, arial, sans-serif;
 }
 
+/* Quick fix na wrapovanie textu na mobiloch */
+@include mobile {
+    * {
+        word-break: break-word;
+        overflow-wrap: break-word;
+    }
+}
+
 :focus-visible {
     outline: 3px solid var(--r-maincta-pink);
     outline-offset: 2px;
