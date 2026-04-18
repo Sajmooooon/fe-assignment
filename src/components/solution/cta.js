@@ -8,22 +8,21 @@ let dialogEl;
 // CTA button click handler
 
 const handleCtaClick = () => {
-    if (!dialogEl) {
-        const wrapper = document.createElement("div");
-        document.body.appendChild(wrapper);
+    if (dialogEl) dialogEl.remove();
 
-        render(
-            dialog({
-                content: secretOffer(),
-                label: "Tajná ponuka",
-                onClose: () => closeDialog(dialogEl),
-            }),
-            wrapper
-        );
+    const wrapper = document.createElement("div");
+    document.body.appendChild(wrapper);
 
-        dialogEl = wrapper.querySelector("dialog");
-    }
+    render(
+        dialog({
+            content: secretOffer(),
+            label: "Tajná ponuka",
+            onClose: () => closeDialog(dialogEl),
+        }),
+        wrapper
+    );
 
+    dialogEl = wrapper.querySelector("dialog");
     dialogEl.showModal();
 };
 
