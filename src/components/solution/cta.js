@@ -2,6 +2,7 @@ import { html, render } from "lit-html";
 import { button } from "../ui/button";
 import ctaImage from "../../assets/images/tanjna-ponuka.png";
 import { dialog, closeDialog } from "../ui/dialog";
+import { secretOffer } from "./secretOffer";
 
 let dialogEl;
 // CTA button click handler
@@ -13,7 +14,7 @@ const handleCtaClick = () => {
 
         render(
             dialog({
-                content: "test",
+                content: secretOffer(),
                 label: "Tajná ponuka",
                 onClose: () => closeDialog(dialogEl),
             }),

@@ -5,9 +5,13 @@
     border: none;
     padding: 0;
     width: calc(100% - 4rem);
-    max-width: 74rem;
+    max-width: 60rem;
     border-radius: 0.4rem;
     margin: auto;
+
+    @include mobile {
+        width: 100%;
+    }
 
     &::backdrop {
         background: rgba(0, 0, 0, 0.4);
