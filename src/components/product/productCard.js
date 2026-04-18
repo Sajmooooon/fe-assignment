@@ -2,8 +2,13 @@ import { html } from "lit-html";
 import { ref } from "lit-html/directives/ref.js";
 import { button } from "../ui/button";
 import { showNotification } from "../ui/notification.js";
+import p1 from "../../assets/images/products/p1.png";
+import p2 from "../../assets/images/products/p2.png";
 
-export const productCard = (product) => {
+const images = [p1, p2];
+
+export const productCard = (product, index) => {
+    const imageSrc = images[index] ?? product.imageUrl;
     let quantity = 1;
     let inputEl;
 
@@ -89,7 +94,7 @@ export const productCard = (product) => {
             </div>
 
             <div class="c-product__image">
-                <img class="c-product__img" src="${product.imageUrl}" alt="${product.name}" />
+                <img class="c-product__img" src="${imageSrc}" alt="${product.name}" />
             </div>
 
             <div class="c-product__body">

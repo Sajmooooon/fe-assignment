@@ -23,6 +23,10 @@
         height: 100%;
         color: var(--c-white);
         justify-content: flex-end;
+
+        @include small-mobile {
+            padding: 1rem;
+        }
     }
 
     &__main {
@@ -121,10 +125,16 @@
         font-family: "DM Sans", sans-serif;
         color: var(--c-white);
         text-decoration: underline;
+        width: fit-content;
         font-weight: 700;
         font-size: 1.5rem;
         line-height: 1.2;
         text-decoration-style: solid;
         text-decoration-skip-ink: auto;
+        transition: 0.3s ease-in-out;
+
+        &:hover {
+            color: var(--r-maincta-pink);
+        }
     }
 }

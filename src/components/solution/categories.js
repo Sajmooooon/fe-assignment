@@ -7,18 +7,11 @@ const getCategorySize = (productCount) => {
     return "large";
 };
 
-const sortCategories = (categories) => {
-    const order = { small: 0, large: 1, tall: 3 };
-    return [...categories].sort(
-        (a, b) => order[getCategorySize(a.productCount)] - order[getCategorySize(b.productCount)]
-    );
-};
-
 export const solutionCategories = (categories) => html`
     <div class="c-solution-categories">
         <h2 class="c-solution-categories__title">Top kategórie produktov</h2>
         <div class="c-solution-categories__grid">
-            ${categories.map((category) => categoryCard(category))}
+            ${categories.map((category, index) => categoryCard(category, index))}
         </div>
     </div>
 `;
