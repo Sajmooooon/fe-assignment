@@ -1,10 +1,29 @@
-import { html } from "lit-html";
+import { html, render } from "lit-html";
 import { button } from "../ui/button";
 import ctaImage from "../../assets/images/tanjna-ponuka.png";
+import { dialog, closeDialog } from "../ui/dialog";
+
+let dialogEl;
 // CTA button click handler
+
 const handleCtaClick = () => {
-    console.log("CTA button clicked");
-    // TODO: Implement email form/modal
+    if (!dialogEl) {
+        const wrapper = document.createElement("div");
+        document.body.appendChild(wrapper);
+
+        render(
+            dialog({
+                content: "test",
+                label: "Tajná ponuka",
+                onClose: () => closeDialog(dialogEl),
+            }),
+            wrapper
+        );
+
+        dialogEl = wrapper.querySelector("dialog");
+    }
+
+    dialogEl.showModal();
 };
 
 // Solution CTA section
