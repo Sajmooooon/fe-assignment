@@ -49,7 +49,7 @@ const icons = {
 };
 
 export const notification = ({ text, status = "success" }) => html`
-    <div class="c-notification c-notification--${status}">
+    <div class="c-notification c-notification--${status}" role="alert" aria-live="polite">
         ${icons[status] ? icons[status] : html``}
         <span>${text}</span>
     </div>

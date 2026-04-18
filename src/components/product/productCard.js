@@ -45,7 +45,11 @@ export const productCard = (product) => {
             </div>
 
             <div class="c-product__actions">
-                <button class="c-product__action" aria-label="Porovnať produkt">
+                <button
+                    class="c-product__action"
+                    aria-label="Porovnať produkt"
+                    title="Porovnať produkt"
+                >
                     <svg
                         width="16"
                         height="16"
@@ -61,7 +65,11 @@ export const productCard = (product) => {
                         />
                     </svg>
                 </button>
-                <button class="c-product__action" aria-label="Pridať do obľúbených">
+                <button
+                    class="c-product__action"
+                    aria-label="Pridať do obľúbených"
+                    title="Pridať do obľúbených"
+                >
                     <svg
                         width="16"
                         height="14"
@@ -90,6 +98,7 @@ export const productCard = (product) => {
                         <div
                             class="c-product__rating"
                             aria-label="Hodnotenie ${product.rating} z 5"
+                            title="Hodnotenie ${product.rating} z 5"
                         >
                             ${Array.from(
                                 { length: 5 },
@@ -142,7 +151,7 @@ export const productCard = (product) => {
                         </button>
                         <input
                             class="c-product__qty-input"
-                            aria-label="Počet kusov"
+                            aria-label="Počet kusov produktu"
                             value="1"
                             type="number"
                             min="1"

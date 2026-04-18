@@ -18,13 +18,13 @@ export const renderSolutionPage = (data) => {
 
     return html`
         <div class="l-solution">
-            <section class="l-solution__banner ">
+            <section class="l-solution__banner" aria-label="Hlavný banner">
                 <div class="l-container l-container--no-pading">
                     ${data.banner ? solutionBanner(data.banner) : html``}
                 </div>
             </section>
 
-            <section class="l-solution__content">
+            <section class="l-solution__content" aria-label="Aktuálne zľavy a produkty">
                 <div class="l-container l-container--is-shorter"">
                     <div class="c-solution-content">
                         <div class="c-solution-content__cta">
@@ -36,7 +36,7 @@ export const renderSolutionPage = (data) => {
                 </div>
             </section>
 
-            <section class="l-solution__categories">
+            <section class="l-solution__categories" aria-label="Kategórie produktov">
                 <div class="l-container l-container--is-shorter">
                     ${data.categories ? solutionCategories(data.categories) : html``}
                 </div>

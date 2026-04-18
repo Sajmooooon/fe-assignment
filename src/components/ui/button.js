@@ -44,7 +44,7 @@ export const button = ({
     icon = null,
     iconPosition = "end",
 }) => html`
-    <button class="c-button ${className}" @click=${onClick}>
+    <button type="button" class="c-button ${className}" @click=${onClick}>
         ${icon && iconPosition === "start" ? icons[icon] : html``}
         <span class="sb-text">${text}</span>
         ${icon && iconPosition === "end" ? icons[icon] : html``}
