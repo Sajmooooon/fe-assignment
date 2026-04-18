@@ -1,6 +1,7 @@
 @use "./../init" as *;
 
 .c-button {
+    width: fit-content;
     display: flex;
     gap: 0.8rem;
     align-items: center;
@@ -26,6 +27,10 @@
         font-size: 1.6rem;
         font-weight: 700;
         white-space: nowrap;
+
+        @include mobile {
+            font-size: 1.3rem;
+        }
     }
 
     .sb-icon {

@@ -3,9 +3,18 @@
 .c-solution-cta {
     position: relative;
     min-width: 250px;
-    height: 54rem;
+    min-height: 54rem;
     overflow: hidden;
+    display: flex;
     border-radius: 0.8rem;
+
+    @include tablet {
+        min-height: 43rem;
+    }
+
+    @include mobile {
+        min-height: 40rem;
+    }
 
     &__image {
         position: absolute;
@@ -20,20 +29,42 @@
     &__overlay {
         position: absolute;
         inset: 0;
-        background: rgb(0 0 0 / 40%);
+        background: linear-gradient(182.11deg, rgba(0, 0, 0, 0) 1.78%, rgba(0, 0, 0, 0.8) 90.09%);
         border-radius: 0.8rem;
     }
 
-    &__content {
+    &__wrapper {
         position: relative;
         display: flex;
         flex-direction: column;
         gap: 2.4rem;
         align-items: flex-start;
         justify-content: flex-end;
-        height: 100%;
         padding: 4.8rem;
         color: #fff;
+
+        @include tablet {
+            padding: 3.8rem;
+        }
+
+        @include mobile {
+            padding: 2.8rem;
+            justify-content: flex-end;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+
+        @include tablet {
+            gap: 28px;
+        }
+
+        @include mobile {
+            gap: 2.4rem;
+        }
 
         &__title {
             margin: 0;
@@ -41,6 +72,15 @@
             font-size: 3.5rem;
             font-weight: 800;
             line-height: 1.2;
+            max-width: 42rem;
+
+            @include tablet {
+                font-size: 3rem;
+            }
+
+            @include mobile {
+                font-size: 2rem;
+            }
         }
 
         &__description {
@@ -49,6 +89,12 @@
             font-size: 1.6rem;
             font-weight: 400;
             line-height: 1.6;
+            max-width: 42rem;
+
+            @include mobile {
+                width: 100%;
+                font-size: 1.4rem;
+            }
 
             strong {
                 font-weight: 800;

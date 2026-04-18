@@ -2,16 +2,17 @@
 
 .c-solution-banner {
     position: relative;
-    height: 56.9rem;
+    min-height: 56.9rem;
     overflow: hidden;
+    display: flex;
     border-radius: 0.8rem;
 
     @include tablet {
-        height: 45rem;
+        min-height: 45rem;
     }
 
     @include mobile {
-        height: 36rem;
+        min-height: 42rem;
     }
 
     &__image {
@@ -24,34 +25,34 @@
         background-image: var(--banner-desktop);
 
         @include mobile {
-            background-image: var(--banner-mobile);
+            background-position-x: 30%;
         }
     }
 
     &__overlay {
         position: absolute;
         inset: 0;
-        background: linear-gradient(
-            90deg,
-            rgb(0 0 0 / 60%) 0%,
-            rgb(0 0 0 / 20%) 50%,
-            transparent 100%
-        );
+        background: linear-gradient(85.28deg, rgba(0, 0, 0, 0.64) 22.49%, rgba(0, 0, 0, 0) 59.21%);
+
         border-radius: 0.8rem;
 
         @include mobile {
-            background: linear-gradient(180deg, rgb(0 0 0 / 20%) 0%, rgb(0 0 0 / 60%) 100%);
+            background: linear-gradient(
+                30.33deg,
+                rgba(0, 0, 0, 0.64) 24.32%,
+                rgba(0, 0, 0, 0) 52.32%
+            );
         }
     }
 
-    &__content {
+    &__wrapper {
+        width: 100%;
         position: relative;
         display: flex;
         flex-direction: column;
         gap: 3.2rem;
         align-items: flex-start;
         justify-content: center;
-        height: 100%;
         padding: 12.8rem 9.7rem;
         color: #fff;
 
@@ -63,9 +64,23 @@
             padding: 4rem 2.4rem;
             justify-content: flex-end;
         }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+
+        @include tablet {
+            gap: 28px;
+        }
+
+        @include mobile {
+            gap: 2.4rem;
+        }
 
         &__title {
-            width: 52rem;
+            max-width: 52rem;
             margin: 0;
             font-family: "Wix Madefor Display", sans-serif;
             font-size: 5.2rem;
@@ -73,18 +88,18 @@
             line-height: 1.25;
 
             @include tablet {
-                font-size: 4rem;
-                width: 40rem;
+                font-size: 4.8rem;
+                max-width: 40rem;
             }
 
             @include mobile {
                 font-size: 2.8rem;
-                width: 100%;
+                max-width: 100%;
             }
         }
 
         &__description {
-            width: 52rem;
+            max-width: 52rem;
             margin: 0;
             font-family: "DM Sans", sans-serif;
             font-size: 1.6rem;
@@ -92,11 +107,11 @@
             line-height: 1.4;
 
             @include tablet {
-                width: 40rem;
+                max-width: 40rem;
             }
 
             @include mobile {
-                width: 100%;
+                max-width: 100%;
                 font-size: 1.4rem;
             }
 

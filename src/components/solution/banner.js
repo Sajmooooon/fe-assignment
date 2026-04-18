@@ -20,16 +20,18 @@ export const solutionBanner = (banner) => html`
 
         <div class="c-solution-banner__overlay"></div>
 
-        <div class="c-solution-banner__content">
-            <h1 class="c-solution-banner__content__title">${banner.title}</h1>
+        <div class="c-solution-banner__wrapper">
+            <div class="c-solution-banner__content">
+                <h1 class="c-solution-banner__content__title">${banner.title}</h1>
 
-            <div class="c-solution-banner__content__description">${banner.description}</div>
+                <div class="c-solution-banner__content__description">${banner.description}</div>
 
-            ${button({
-                text: banner.ctaText,
-                onClick: () => handleBannerClick(banner.link, banner.linkTarget),
-                icon: "arrow",
-            })}
+                ${button({
+                    text: banner.ctaText,
+                    onClick: () => handleBannerClick(banner.link, banner.linkTarget),
+                    icon: "arrow",
+                })}
+            </div>
         </div>
     </div>
 `;
